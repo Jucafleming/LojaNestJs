@@ -6,6 +6,9 @@ export class ProdutoRepository{
 
     async salvar(produto){
         this.produtos.push(produto);
-        console.log(this.produtos);
+    }
+
+    async listar(){
+        return this.produtos;
     }
 }
