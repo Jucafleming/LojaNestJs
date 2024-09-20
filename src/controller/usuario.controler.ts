@@ -1,14 +1,19 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Post, Get } from "@nestjs/common";
 import { UsuarioRepository } from "src/repository/usuario.repository";
 
 @Controller('/usuarios')
 export class UsuarioController {
 
     private usuarioRepository = new UsuarioRepository;
-    
+
     @Post()
     async criaUsuario(@Body() dadosDoUsuario) {
         this.usuarioRepository.salvar(dadosDoUsuario);
         return dadosDoUsuario;
+    }
+
+    @Get()
+    async listaUsuarios(){
+        return this.usuarioRepository.listar();
     }
 }
