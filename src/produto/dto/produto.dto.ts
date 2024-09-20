@@ -1,5 +1,5 @@
 import { Type } from "class-transformer";
-import { ValidateNested, IsArray, ArrayMinSize, IsNotEmpty, IsNumber, Min, MaxLength, IsPositive, ValidateIf } from "class-validator";
+import { ValidateNested, IsArray, ArrayMinSize, IsNotEmpty, IsNumber, Min, MaxLength, IsPositive, ValidateIf, IsUUID } from "class-validator";
 
 export class CaracteristicaProdutoDTO {
     @IsNotEmpty({ message: 'O nome da característica não pode ser vazio' })
@@ -18,7 +18,9 @@ export class ImagemProdutoDTO {
 }
 
 export class CriaProdutoDTO {
-
+    @IsUUID(undefined, { message: 'ID de usuário inválido' })
+    usuarioId: string;
+    
     @IsNotEmpty({ message: 'O nome do produto não pode ser vazio' })
     nome: string;
 
