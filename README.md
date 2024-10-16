@@ -16,8 +16,7 @@ Certifique-se de ter os seguintes softwares instalados em sua máquina:
 Primeiramente, clone o repositório do projeto para sua máquina local.
 
 ```bash
-git clone https://github.com/Jucafleming/kanban.git
-cd kanban
+git clone https://github.com/Jucafleming/LojaNestJs.git
 ```
 
 ### 2. Instalar dependências
